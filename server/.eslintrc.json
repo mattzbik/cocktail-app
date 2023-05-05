@@ -9,12 +9,11 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
-    // "plugin:@typescript-eslint/strict"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "**/tsconfig.json" // "project": "./tsconfig.json" <-- why does this not work?
+    "project": "**/tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
@@ -35,14 +34,5 @@
     "object-curly-spacing": ["error", "always"],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "no-console": "warn"
-    // "array-type": "array-simple"
-    // "sort-imports": ["error", {
-    //     "ignoreCase": false,
-    //     "ignoreDeclarationSort": false,
-    //     "ignoreMemberSort": false,
-    //     "memberSyntaxSortOrder": ["single", "all", "multiple", "none"],
-    //     "allowSeparatedGroups": false
-    // }],
-    // "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}]
   }
 }
