@@ -10,6 +10,7 @@ import cors from 'cors';
 import express from 'express';
 import http from 'http';
 import { buildSchema } from 'type-graphql';
+import { postgresDataSource } from './data-source';
 import { HelloResolver } from './resolvers/hello';
 
 interface MyContext {
@@ -17,6 +18,15 @@ interface MyContext {
 }
 
 const main = async () => {
+  await postgresDataSource
+    .initialize()
+    // eslint-disable-next-line no-console
+    .then(() => console.log('Data Source has been initialized!'))
+    .catch((err) =>
+      // eslint-disable-next-line no-console
+      console.error('Error during Data Source Initialization:', err)
+    );
+
   const app = express();
 
   const httpServer = http.createServer(app);
