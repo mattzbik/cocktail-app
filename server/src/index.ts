@@ -11,6 +11,8 @@ import express from 'express';
 import http from 'http';
 import { buildSchema } from 'type-graphql';
 import { postgresDataSource } from './data-source';
+import { CocktailResolver } from './resolvers/cocktail';
+import { GlassResolver } from './resolvers/glass';
 import { HelloResolver } from './resolvers/hello';
 
 interface MyContext {
@@ -34,7 +36,7 @@ const main = async () => {
   const server = new ApolloServer<MyContext>({
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     schema: await buildSchema({
-      resolvers: [HelloResolver],
+      resolvers: [HelloResolver, CocktailResolver, GlassResolver],
       validate: false,
     }),
   });
@@ -50,7 +52,6 @@ const main = async () => {
     expressMiddleware(server, {
       context: async ({ req }) => ({
         token: req.headers.token,
-        dishLoader: req,
       }),
     })
   );

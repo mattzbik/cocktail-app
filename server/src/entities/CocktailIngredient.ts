@@ -18,13 +18,13 @@ export class CocktailIngredient extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Field()
+  @Field(() => Cocktail)
   @ManyToOne(() => Cocktail)
-  cocktailId: string;
+  cocktail: Cocktail;
 
   @Field({ description: 'Ingredient' })
   @ManyToOne(() => Ingredient)
-  ingredientId: Ingredient;
+  ingredient: Ingredient;
 
   @Field({ description: 'Quantity of ingredient' })
   @Column()

@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -26,11 +27,15 @@ export class Cocktail extends BaseEntity {
   @Column()
   description: string;
 
-  @Field((_type) => Glass, { description: 'Glass type' })
-  @Column({ type: 'enum', enum: Glass })
+  @Field()
+  @Column()
+  glassId: string;
+
+  @Field(() => Glass, { description: 'Glass type', nullable: true })
+  @ManyToOne(() => Glass, (g) => g.cocktail)
   glass: Glass;
 
-  @Field((_type) => [CocktailIngredient], {
+  @Field(() => [CocktailIngredient], {
     description: 'List of ingredients required',
   })
   ingredients: CocktailIngredient[];
