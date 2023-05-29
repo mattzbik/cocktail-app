@@ -11,7 +11,8 @@
     "watch": "tsc -w",
     "lint": "eslint --ext .ts .",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration": "npm run typeorm migration:run -- -d src/data-source.ts"
+    "run_migration": "npm run typeorm migration:run -- -d src/data-source.ts",
+    "create_migration": "npm run typeorm migration:create"
   },
   "author": "",
   "license": "ISC",

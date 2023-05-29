@@ -7,8 +7,8 @@ export class MockGlass1685033364313 implements MigrationInterface {
         insert into glass (id, name, "createdAt", "updatedAt") values ('3fab3069-5627-4187-b5b1-3d2f0e2b4d08', 'Hurricane', '2023-03-19T08:52:03Z', '2022-09-13T17:03:22Z');
         insert into glass (id, name, "createdAt", "updatedAt") values ('a7ae3e24-7464-4a64-b0ce-dc320a894df7', 'Margarita', '2023-02-13T00:52:13Z', '2022-12-20T16:48:02Z');
         insert into glass (id, name, "createdAt", "updatedAt") values ('eff707b7-fcce-4175-b005-4f05bdb97b85', 'Old Fashioned', '2023-04-18T02:28:37Z', '2022-07-13T14:26:52Z');
-        insert into glass (id, name, "createdAt", "updatedAt") values ('9b4b98eb-1df0-4f2d-8fc9-3c2f90725d05', 'Sling', '2023-04-01T07:30:40Z', '2023-03-06T05:17:19Z');
-        insert into glass (id, name, "createdAt", "updatedAt") values ('e42347bf-af88-4c36-9067-3e11f003d5ac', 'Martini', '2023-02-24T00:19:41Z', '2022-09-13T11:09:58Z');`);
+        insert into glass (id, name, "createdAt", "updatedAt") values ('e42347bf-af88-4c36-9067-3e11f003d5ac', 'Martini', '2023-02-24T00:19:41Z', '2022-09-13T11:09:58Z');
+        insert into glass (id, name, "createdAt", "updatedAt") values ('d057b531-fa55-4fc3-ae7e-fd1c27b99bc1', 'Wine', '2023-02-24T00:19:41Z', '2022-09-13T11:09:58Z');`);
   }
 
   public async down(_queryRunner: QueryRunner): Promise<void> {}

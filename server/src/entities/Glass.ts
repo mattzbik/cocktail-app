@@ -24,11 +24,9 @@ export class Glass extends BaseEntity {
   @OneToMany(() => Cocktail, (c) => c.glass)
   cocktail: Cocktail[];
 
-  @Field(() => String)
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
-  @Field(() => String)
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 }

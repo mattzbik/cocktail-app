@@ -11,6 +11,8 @@ import {
 import { postgresDataSource } from '../data-source';
 import { Cocktail } from '../entities/Cocktail';
 import { Glass } from '../entities/Glass';
+import { Ingredient } from '../entities/Ingredient';
+import { ingredientLoader } from '../utils/cocktailIngredientLoader';
 import { createGlassLoader } from '../utils/glassLoader';
 
 @ObjectType()
@@ -26,6 +28,11 @@ export class CocktailResolver {
   @FieldResolver(() => Glass)
   async glass(@Root() cocktail: Cocktail) {
     return createGlassLoader().load(cocktail.glassId);
+  }
+
+  @FieldResolver(() => [Ingredient])
+  async ingredients(@Root() cocktail: Cocktail) {
+    return await ingredientLoader().load(cocktail.id);
   }
 
   @Query(() => PaginatedCocktails)

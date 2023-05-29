@@ -23,11 +23,9 @@ export class Equipment extends BaseEntity {
   @Column()
   description: string;
 
-  @Field(() => String)
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
-  @Field(() => String)
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 }
