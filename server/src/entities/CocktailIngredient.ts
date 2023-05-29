@@ -18,27 +18,30 @@ export class CocktailIngredient extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Field(() => Cocktail)
+  @Column()
+  cocktailId: string;
+
   @ManyToOne(() => Cocktail)
   cocktail: Cocktail;
 
+  @Column()
+  ingredientId: string;
+
   @Field({ description: 'Ingredient' })
   @ManyToOne(() => Ingredient)
-  ingredient: Ingredient;
+  ingredient?: Ingredient;
 
-  @Field({ description: 'Quantity of ingredient' })
+  @Field({ description: 'Quantity of ingredient', nullable: true })
   @Column()
   quantity: number;
 
-  @Field({ description: 'Measurement of ingredient' })
+  @Field({ description: 'Measurement of ingredient', nullable: true })
   @Column()
-  measure: string;
+  measurement: string;
 
-  @Field(() => String)
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
-  @Field(() => String)
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 }

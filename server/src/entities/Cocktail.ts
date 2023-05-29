@@ -27,11 +27,10 @@ export class Cocktail extends BaseEntity {
   @Column()
   description: string;
 
-  @Field()
   @Column()
   glassId: string;
 
-  @Field(() => Glass, { description: 'Glass type', nullable: true })
+  @Field(() => Glass, { description: 'Glass type' })
   @ManyToOne(() => Glass, (g) => g.cocktail)
   glass: Glass;
 
@@ -47,11 +46,9 @@ export class Cocktail extends BaseEntity {
   @Column()
   method: string;
 
-  @Field(() => String)
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
-  @Field(() => String)
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 }

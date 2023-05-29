@@ -6,7 +6,7 @@ export class CreateTables1685033337770 implements MigrationInterface {
       'CREATE TABLE "ingredient" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" character varying NOT NULL, "description" character varying NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_6f1e945604a0b59f56a57570e98" PRIMARY KEY ("id"))'
     );
     await queryRunner.query(
-      'CREATE TABLE "cocktail_ingredient" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "quantity" integer NOT NULL, "measure" character varying NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), "cocktailId" uuid, "ingredientId" uuid, CONSTRAINT "PK_1ef3c4b6d4f38312c7ddcddb1c4" PRIMARY KEY ("id"))'
+      'CREATE TABLE "cocktail_ingredient" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "quantity" integer NOT NULL, "measurement" character varying NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), "cocktailId" uuid, "ingredientId" uuid, CONSTRAINT "PK_1ef3c4b6d4f38312c7ddcddb1c4" PRIMARY KEY ("id"))'
     );
     await queryRunner.query(
       'CREATE TABLE "equipment" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" character varying NOT NULL, "description" character varying NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_0722e1b9d6eb19f5874c1678740" PRIMARY KEY ("id"))'
