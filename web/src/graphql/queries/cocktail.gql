@@ -1,0 +1,22 @@
+query Cocktail($id: String!) {
+  cocktail(id: $id) {
+    description
+    id
+    method
+    name
+    glass {
+      id
+      name
+    }
+    ingredients {
+      id
+      measurement
+      quantity
+      ingredient {
+        description
+        id
+        name
+      }
+    }
+  }
+}

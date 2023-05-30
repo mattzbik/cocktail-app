@@ -1,0 +1,6 @@
+query Glass($id: String!) {
+  glass(id: $id) {
+    id
+    name
+  }
+}
