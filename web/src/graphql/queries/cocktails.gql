@@ -1,0 +1,25 @@
+query Cocktails($cursor: String, $limit: Int!) {
+  cocktails(cursor: $cursor, limit: $limit) {
+    cocktails {
+      description
+      id
+      method
+      name
+      glass {
+        id
+        name
+      }
+      ingredients {
+        id
+        measurement
+        quantity
+        ingredient {
+          description
+          id
+          name
+        }
+      }
+    }
+    hasMore
+  }
+}

@@ -1,0 +1,9 @@
+query Glasses($limit: Int!, $cursor: String) {
+  glasses(limit: $limit, cursor: $cursor) {
+    glass {
+      id
+      name
+    }
+    hasMore
+  }
+}
