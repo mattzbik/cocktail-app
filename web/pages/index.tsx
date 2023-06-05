@@ -14,7 +14,7 @@ export default function Home() {
       <Grid container spacing={2}>
         {data?.cocktails.cocktails.map((c, i) => (
           <Grid item key={i} xs={4}>
-            <Cocktail name={c.name} description={c.description} />
+            <Cocktail name={c.name} description={c.description} id={c.id} />
           </Grid>
         ))}
       </Grid>
