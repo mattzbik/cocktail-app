@@ -31,7 +31,6 @@
     "@typescript-eslint/no-empty-function": "off",
     "no-case-declarations": "off",
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "eqeqeq": "error",
     "no-trailing-spaces": "error",
