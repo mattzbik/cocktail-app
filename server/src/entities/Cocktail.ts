@@ -11,6 +11,7 @@ import {
 import { CocktailIngredient } from './CocktailIngredient';
 import { Equipment } from './Equipment';
 import { Glass } from './Glass';
+import { User } from './User';
 
 @ObjectType()
 @Entity()
@@ -45,6 +46,13 @@ export class Cocktail extends BaseEntity {
   @Field({ description: 'Method to prepare cocktail' })
   @Column()
   method: string;
+
+  @Column()
+  creatorId: string;
+
+  @Field()
+  @ManyToOne(() => User, (user) => user.cocktails)
+  creator: User;
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
