@@ -11,7 +11,7 @@ import {
 import { Cocktail } from './Cocktail';
 
 @ObjectType()
-@Entity()
+@Entity('cocktail_library_user')
 export class User extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn('uuid')
