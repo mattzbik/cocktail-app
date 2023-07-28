@@ -14,6 +14,7 @@ import { Glass } from '../entities/Glass';
 import { Ingredient } from '../entities/Ingredient';
 import { ingredientLoader } from '../utils/cocktailIngredientLoader';
 import { createGlassLoader } from '../utils/glassLoader';
+import { userLoader } from '../utils/userLoader';
 
 @ObjectType()
 class PaginatedCocktails {
@@ -33,6 +34,11 @@ export class CocktailResolver {
   @FieldResolver(() => [Ingredient])
   async ingredients(@Root() cocktail: Cocktail) {
     return await ingredientLoader().load(cocktail.id);
+  }
+
+  @FieldResolver(() => [Ingredient])
+  async creator(@Root() cocktail: Cocktail) {
+    return await userLoader().load(cocktail.creatorId);
   }
 
   @Query(() => PaginatedCocktails)
